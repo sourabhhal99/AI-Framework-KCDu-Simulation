@@ -17,7 +17,7 @@ This project presents a **privacy-preserving simulation framework** to analyze t
 > **Note:** Since real-world patient location data is restricted due to privacy laws (HIPAA/GDPR), this framework utilizes a **Synthetic Data Environment** generated based on hydro-geochemical research patterns (e.g., correlating low water tables with high metal concentration).
 
 ### The Workflow:
-`Synthetic Environment (Satellite Data)` ➔ `Random Forest Classifier` ➔ `XAI Analysis (SHAP/PDP)` ➔ `Fairness Check` ➔ `Risk Output`
+`[KCDu Data + Synthetic Environment (Satellite Data)]` ➔ `Random Forest Classifier` ➔ `XAI Analysis (Feature Importance/PDP)` ➔ `Fairness Check` ➔ `Risk Output`
 
 ---
 
@@ -48,7 +48,7 @@ A medical model must be safe and unbiased.
 A prediction is dangerous if the model is "confusingly confident." I implemented **Probability Estimation** to flag uncertain cases where the model's confidence is low, suggesting a need for human doctor intervention.
 
 ![Uncertainty Graph](graph_uncertainty.png)
-*(Fig 3: Distribution of model confidence scores to detect weak predictions.)*
+*(Fig 3: Histogram of Prediction Probabilities showing the model's certainty levels.)*
 
 ### 4️⃣ Ethical Fairness Check (Bias Detection)
 I analyzed the model's performance across different demographics (Young vs. Old) to ensure that the algorithm does not discriminate based on age, a critical requirement for clinical AI deployment.
