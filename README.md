@@ -28,14 +28,14 @@ To avoid the "Black Box" problem in healthcare, I employed **Global Interpretabi
 ### 1️⃣ Identifying the Root Cause (Global Feature Importance)
 The model ranks environmental features based on their impact. The simulation correctly identifies **Groundwater Level** as the primary driver of disease risk, aligning with toxicological studies.
 
-![Feature Importance](graph1.png)
+![Feature Importance](image/graph1.png)
 *(Fig 1: Ranking of features. Groundwater Level is identified as the most critical factor.)*
 
 ### 2️⃣ Understanding the Behavior (Partial Dependence Plot)
 **Hypothesis Validation:** Does lower water increase risk?
 The PDP below confirms the **negative correlation**: As the groundwater level drops (x-axis), the probability of CKDu (y-axis) increases, simulating the concentration of heavy metals.
 
-![PDP Analysis](graph2.png)
+![PDP Analysis](image/graph2.png)
 *(Fig 2: Partial Dependence Plot showing the impact of Groundwater depletion on risk probability.)*
 
 ---
@@ -47,13 +47,13 @@ A medical model must be safe and unbiased.
 ### 3️⃣ Uncertainty Quantification (Confidence Scoring)
 A prediction is dangerous if the model is "confusingly confident." I implemented **Probability Estimation** to flag uncertain cases where the model's confidence is low, suggesting a need for human doctor intervention.
 
-![Uncertainty Graph](graph_uncertainty.png)
+![Uncertainty Graph](image/graph_uncertainty.png)
 *(Fig 3: Histogram of Prediction Probabilities showing the model's certainty levels.)*
 
 ### 4️⃣ Ethical Fairness Check (Bias Detection)
 I analyzed the model's performance across different demographics (Young vs. Old) to ensure that the algorithm does not discriminate based on age, a critical requirement for clinical AI deployment.
 
-![Fairness Graph](graph_ethics.png)
+![Fairness Graph](image/graph_ethics.png)
 *(Fig 4: Fairness audit ensuring equal error rates across age groups.)*
 
 ---
